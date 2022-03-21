@@ -38,4 +38,23 @@ class Student(Person):
         super.__init__(first_name,last_name, dob, alive)
         self.student_id = f'student_{uuid4()}'
 
+
 class ZipCodeStudent(Student):
+    def __init__(self, first_name, last_name, dob, alive):
+        super.__init__(first_name,last_name, dob, alive)
+
+
+class PreKStudent(Student):
+    def __init__(self, first_name, last_name, dob, alive):
+        super.__init__(first_name, last_name, dob, alive)
+
+
+class Classroom:
+    def __init__(self):
+        self.students = []
+        self.instructors = []
+
+    def add_instructor(self, instructor):
+        self.instructors[instructor.instructor_id] = instructor
+        return self.instructors
+
