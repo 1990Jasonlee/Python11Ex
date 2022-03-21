@@ -4,7 +4,7 @@ from uuid import uuid4
 
 class AliveStatus(Enum):
     DECEASED = 0
-    ALIVE = 0
+    ALIVE = 1
 
 
 class Person:
