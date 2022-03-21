@@ -26,7 +26,16 @@ class Person:
     def update_status(self, new_status):
         self.alive = new_status
 
+
 class Instructor(Person):
     def __init__(self, first_name, last_name, dob, alive):
         super.__init__(first_name,last_name, dob, alive)
         self.instructor_id = f'instructor_{uuid4()}'
+
+
+class Student(Person):
+    def __init__(self, first_name, last_name, dob, alive):
+        super.__init__(first_name,last_name, dob, alive)
+        self.student_id = f'student_{uuid4()}'
+
+class ZipCodeStudent(Student):
