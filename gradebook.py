@@ -1,4 +1,5 @@
 from enum import Enum
+from uuid import uuid4
 
 
 class AliveStatus(Enum):
@@ -24,3 +25,8 @@ class Person:
 
     def update_status(self, new_status):
         self.alive = new_status
+
+class Instructor(Person):
+    def __init__(self, first_name, last_name, dob, alive):
+        super.__init__(first_name,last_name, dob, alive)
+        self.instructor_id = f'instructor_{uuid4()}'
