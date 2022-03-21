@@ -12,3 +12,15 @@ class Person:
         self.last_name = last_name
         self.dob = dob
         self.alive = alive
+
+    def update_first_name(self,new_first_name):
+        self.first_name = new_first_name
+
+    def update_last_name(self, new_last_name):
+        self.last_name = new_last_name
+
+    def update_dob(self, new_dob):
+        self.dob = new_dob
+
+    def update_status(self, new_status):
+        self.alive = new_status
