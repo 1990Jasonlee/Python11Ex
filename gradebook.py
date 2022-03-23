@@ -8,11 +8,11 @@ class AliveStatus(Enum):
 
 
 class Person:
-    def __init__(self, first_name, last_name, dob, alive):
+    def __init__(self, first_name, last_name, dob):
         self.first_name = first_name
         self.last_name = last_name
         self.dob = dob
-        self.alive = alive
+        self.alive = AliveStatus
 
     def update_first_name(self,new_first_name):
         self.first_name = new_first_name
@@ -28,25 +28,25 @@ class Person:
 
 
 class Instructor(Person):
-    def __init__(self, first_name, last_name, dob, alive):
-        super.__init__(first_name,last_name, dob, alive)
+    def __init__(self, first_name, last_name, dob):
+        super().__init__(first_name,last_name, dob)
         self.instructor_id = f'instructor_{uuid4()}'
 
 
 class Student(Person):
-    def __init__(self, first_name, last_name, dob, alive):
-        super.__init__(first_name,last_name, dob, alive)
+    def __init__(self, first_name, last_name, dob):
+        super().__init__(first_name,last_name, dob)
         self.student_id = f'student_{uuid4()}'
 
 
 class ZipCodeStudent(Student):
-    def __init__(self, first_name, last_name, dob, alive):
-        super.__init__(first_name,last_name, dob, alive)
+    def __init__(self, first_name, last_name, dob):
+        super().__init__(first_name,last_name, dob)
 
 
 class PreKStudent(Student):
-    def __init__(self, first_name, last_name, dob, alive):
-        super.__init__(first_name, last_name, dob, alive)
+    def __init__(self, first_name, last_name, dob):
+        super().__init__(first_name, last_name, dob)
 
 
 class Classroom:
@@ -56,5 +56,9 @@ class Classroom:
 
     def add_instructor(self, instructor):
         self.instructors[instructor.instructor_id] = instructor
+        return self.instructors
+
+    def remove_instructor(self, instructor):
+        del self.instructors[instructor.instructor_id]
         return self.instructors
 
