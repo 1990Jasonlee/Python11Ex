@@ -58,7 +58,22 @@ class Classroom:
         self.instructors[instructor.instructor_id] = instructor
         return self.instructors
 
-    def remove_instructor(self, instructor):
-        del self.instructors[instructor.instructor_id]
+    def remove_instructor(self, instructor_id):
+        del self.instructors[instructor_id]
         return self.instructors
 
+    def add_student(self, student):
+        self.students[student.student_id] = student
+        return self.students
+
+    def remove_student(self, student_id):
+        self.students[student_id]
+        return self.students
+
+    def print_instructors(self):
+        for instructor in self.instructors.value():
+            print(f'{instructor.instructor_id} {instructor.first_name} {instructor.last_name} {instructor.dob} {instructor.alive}')
+
+    def print_students(self):
+        for student in self.students.value():
+            print(f'{student.students_id} {student.first_name} {student.last_name} {student.dob} {student.alive}')
